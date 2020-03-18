@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "autoprefixer": true,
+    "postcss-safe-important": true,
+    "postcss-nested": true,
+    "postcss-prefix-selector":{prefix: ".slowpoke_tp_widget", exclude: ["html", "body", ".demo_wrapper"]}
+  }
+}
