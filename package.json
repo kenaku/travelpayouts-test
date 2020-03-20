@@ -23,6 +23,6 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "tiny-date-picker": "chrisdavies/tiny-date-picker#98/head"
+    "tiny-date-picker": "kenaku/tiny-date-picker"
   }
 }

@@ -5477,9 +5477,9 @@ timsort@^0.3.0:
   resolved "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tiny-date-picker@chrisdavies/tiny-date-picker#98/head:
+tiny-date-picker@kenaku/tiny-date-picker:
   version "3.2.8"
-  resolved "https://codeload.github.com/chrisdavies/tiny-date-picker/tar.gz/dd951ec187366da44535cfe4cca536db2f640ac4"
+  resolved "https://codeload.github.com/kenaku/tiny-date-picker/tar.gz/dd951ec187366da44535cfe4cca536db2f640ac4"
 
 tiny-inflate@^1.0.0:
   version "1.0.3"

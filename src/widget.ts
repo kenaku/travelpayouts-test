@@ -1,4 +1,4 @@
-import './widget.css';
+import './styles/widget.css';
 
 import { searchForm } from './searchForm';
 import { syncWidgetSize } from './utils/syncWidgetSize';
