@@ -1,5 +1,3 @@
-import { JSX } from 'preact';
-
 const BASE_SEARCH_URL = 'https://www.aviasales.ru/search';
 
 const formatDate = (date: string) => {
@@ -12,6 +10,3 @@ export const getSearchURL = (departureDate: string, returnDate: string) => {
 
   return `${BASE_SEARCH_URL}/LED${departureFormatted}HKT${returnFormatted}201`;
 };
-
-export interface InputEvent
-  extends JSX.TargetedEvent<HTMLInputElement, Event> {}
