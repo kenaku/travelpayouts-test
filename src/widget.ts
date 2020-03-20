@@ -13,20 +13,21 @@ if (container) {
     const customStylesString = `background:${customBG};color:${customColor};`;
 
     const widgetMarkup = `
-      <section class="slowpoke_tp_widget">
-        <div class="widget" style=${customStylesString}>
-          <h3 class="title">Where does it come from? Why do we use it?</h3>
-          <div class="note">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-          </div>
+      <div class="widget" style=${customStylesString}>
+        <h3 class="title">Where does it come from? Why do we use it?</h3>
+        <div class="note">
+          It is a long established fact that a reader will be distracted by
+          the readable content of a page when looking at its layout.
         </div>
-      </section>
+      </div>
     `;
 
-    container.innerHTML = widgetMarkup;
+    const widgetRoot = document.createElement('section');
+    widgetRoot.classList.add('slowpoke_tp_widget');
 
-    const widgetRoot = container.querySelector('.slowpoke_tp_widget');
+    widgetRoot.innerHTML = widgetMarkup;
+    container.appendChild(widgetRoot);
+
     const widget = container.querySelector('.widget');
 
     if (widgetRoot) {

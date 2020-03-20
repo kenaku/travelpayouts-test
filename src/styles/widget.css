@@ -48,6 +48,7 @@
   display: flex;
   flex-grow: 1;
   margin: 0;
+  width: min-content;
   .widget-size-xs &,
   .widget-size-s & {
     width: 100%;
