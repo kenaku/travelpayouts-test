@@ -6,7 +6,7 @@
 
 ## dev
 
-`yarn start`
+`yarn dev`
 
 ## build
 
