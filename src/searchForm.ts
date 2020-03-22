@@ -3,51 +3,62 @@ import { createDatePicker } from './datePicker';
 import { getSearchURL } from './utils';
 import { getCalenderIcon } from './calendarIcon';
 import { getCustomStyles } from './utils/customStyles';
+import { h } from './utils/h';
 
 export const searchForm = (container: Element) => {
   const today = new Date();
-  const form = document.createElement('form');
+
+  let departureDate = '';
+  let returnDate = '';
+
   const customCalendarIconColor = getCustomStyles('widget-background');
   const customButtonBG = getCustomStyles('submit-button-background');
   const customButtonColor = getCustomStyles('submit-button-color');
   const calendarIcon = getCalenderIcon(customCalendarIconColor);
 
-  const formMarkup = `
-    <div class="inputs">
-      <span class="input-wrapper">
-        <input
-          type="text"
-          class="input departure-date"
-          placeholder="Depart date"
-        />
-        ${calendarIcon}
-      </span>
-      <span class="input-wrapper">
-        <input
-          type="text"
-          class="input return-date"
-          placeholder="Return date"
-        />
-        ${calendarIcon}
-      </span>
-    </div>
-    <button
-      class="submit-button"
-      style="color:${customButtonColor};background:${customButtonBG}"
-    >
-      Search
-    </button>
-  `;
+  const departureInput = h('input', {
+    type: 'text',
+    class: 'input departure-date',
+    placeholder: 'Departure date',
+  });
 
-  form.innerHTML = formMarkup;
-  form.classList.add('search-form');
+  const returnInput = h('input', {
+    type: 'text',
+    class: 'input return-date',
+    placeholder: 'Return date',
+  });
 
-  let departureDate = '';
-  let returnDate = '';
+  const departureInputWrapper = h(
+    'span',
+    { class: 'input-wrapper' },
+    departureInput,
+    calendarIcon,
+  );
 
-  const departureInput = form.querySelector('.departure-date');
-  const returnInput = form.querySelector('.return-date');
-  const button = form.querySelector('.submit-button');
+  const returnInputWrapper = h(
+    'span',
+    { class: 'input-wrapper' },
+    returnInput,
+    calendarIcon,
+  );
+
+  const inputs = h(
+    'div',
+    { class: 'inputs' },
+    departureInputWrapper,
+    returnInputWrapper,
+  );
+
+  const button = h(
+    'button',
+    {
+      class: 'submit-button',
+      style: `color:${customButtonColor}; background:${customButtonBG}`,
+    },
+    'Search',
+  );
+
+  const form = h('form', { class: 'search-form' }, inputs, button);
 
   createDatePicker({
     node: departureInput,
@@ -76,9 +87,10 @@ export const searchForm = (container: Element) => {
   const handleReturnInputChange = (e: Event) => {
     returnDate = (<HTMLInputElement>e.target)?.value;
   };
-  departureInput?.addEventListener('change', handleDepartureInputChange);
-  returnInput?.addEventListener('change', handleReturnInputChange);
-  button?.addEventListener('click', handleSubmit);
+
+  departureInput.addEventListener('change', handleDepartureInputChange);
+  returnInput.addEventListener('change', handleReturnInputChange);
+  button.addEventListener('click', handleSubmit);
 
   return form;
 };

@@ -1,14 +1,11 @@
-export const getCalenderIcon = (color?: string) =>
-  `<svg
-    width="15"
-    height="17"
-    xmlns="http://www.w3.org/2000/svg"
-    class="calendar"
-  >
-    <path
-      d="M2 7.998s.002 7.25 0 7.002l11.003-.001c-.002 0-.006-7-.006-7L2 7.998zM8 11h4v3H8v-3zm7-5v9a2 2 0 01-2 2H2a2 2 0 01-2-2V6h15zm-3-4V1a1 1 0 00-1-1h-1a1 1 0 00-1 1v1H6V1a1 1 0 00-1-1H4a1 1 0 00-1 1v1H2a2 2 0 00-2 2h15a2 2 0 00-2-2h-1z"
-      style="fill:${color || '#4990E2'}"
-      fillRule="evenodd"
-    />
-  </svg>
-  `;
+export const getCalenderIcon = (color?: string) => {
+  const xmlns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(xmlns, 'svg');
+  svg.setAttributeNS(null, 'class', 'calendar');
+
+  const path = document.createElementNS(xmlns, 'path');
+  path.setAttributeNS(null, 'fill', color || '4990e2');
+
+  svg.appendChild(path);
+  return svg;
+};

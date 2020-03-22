@@ -12,11 +12,11 @@ const isValid = (color: string) => color.length < 10;
 
 export const getCustomStyles = (attribute: string) => {
   if (!attributesSource || !availableStyles.includes(attribute)) {
-    return;
+    return '';
   }
   const value = attributesSource.getAttribute(`data-${attribute}`);
   if (!value || !isValid(value)) {
-    return;
+    return '';
   }
-  return `${value}!important`;
+  return value ? `${value}!important` : '';
 };
