@@ -3,7 +3,7 @@ import './styles/widget.css';
 import { searchForm } from './searchForm';
 import { syncWidgetSize } from './utils/syncWidgetSize';
 import { getCustomStyles } from './utils/customStyles';
-import { h } from './utils/jsx';
+import { h } from './utils/h';
 
 const container = document.currentScript?.parentElement;
 
