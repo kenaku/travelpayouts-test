@@ -10,8 +10,6 @@ export const h = (
   attributes: { [key: string]: string } | null,
   ...children: Array<string | Element>
 ): HTMLElement => {
-  console.log(name, attributes, children);
-
   const el = document.createElement(name);
   if (attributes) {
     for (const name in attributes) {
